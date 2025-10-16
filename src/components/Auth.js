@@ -14,7 +14,7 @@ export default function Auth() {
         />
         I am not a robot
       </label>
-      <p className="authText">{isAuthenticated ? "you are now authenticated , You can proceed" : "you are not authenticated"}</p>
+      <p className="authText">{isAuthenticated ? "You are now authenticated, you can proceed" : "you are not authenticated"}</p>
     </div>
   );
 }
