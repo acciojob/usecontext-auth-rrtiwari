@@ -1,13 +1,17 @@
+import "./../styles/App.css";
+import React, { createContext, useState } from "react";
+import Auth from "./Auth";
 
-import React from "react";
-import './../styles/App.css';
+export const AuthContext = createContext();
 
-const App = () => {
+export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const toggleAuth = () => setIsAuthenticated(!isAuthenticated);
+
   return (
-    <div>
-        {/* Do not remove the main div */}
-    </div>
-  )
+    <AuthContext.Provider value={{ isAuthenticated, toggleAuth }}>
+      <Auth />
+    </AuthContext.Provider>
+  );
 }
 
-export default App
